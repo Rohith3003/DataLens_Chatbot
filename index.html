@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataLens</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.0/mammoth.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>DataLens</h2>
+            <p>Welcome to DataLens.</p>
+            <p>DataLens is an intelligent chatbot designed to transform the way you interact with data. 
+                It seamlessly reads, analyzes, and summarizes information in an instant. 
+                <br><br>Empower your decision-making with DataLens - where complex data turns into simple, 
+                meaningful narratives.</p>
+        </div>
+        <div class="main-chat">
+            <button class="clear-button" onclick="clearChat()" title="Clear Chat">
+                <img src="images/clear-icon.png" alt="Clear Chat">
+            </button>
+            <div class="chat-box">
+                <p class="instructions">To use DataLens, simply upload the file to be analyzed using the "Add Context" button and start asking your queries in the chat box.</p>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <!-- Messages will be displayed here -->
+            </div>
+            <div class="input-container">
+                <input type="text" id="userInput" placeholder="Post your query...">
+                <button id="sendButton" onclick="sendMessage()">Ask</button>
+                <button id="uploadButton" onclick="document.getElementById('fileInput').click()">Add Context</button>
+                <input type="file" id="fileInput" multiple style="display: none;" onchange="uploadFile()">
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
